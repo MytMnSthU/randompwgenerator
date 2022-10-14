@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap");
+
+:root {
+   --primary-color: #647e68;
+   --secondary-color: #182747;
+
+   --bg-color: var(--secondary-color);
+   --txt-color: #d8d8d8;
+}
+
+::selection {
+   background-color: var(--secondary-color);
+   color: var(--txt-color);
+}
+
+* {
+   margin: 0;
+   padding: 0;
+
+   box-sizing: border-box;
+}
+
+body {
+   font-family: "Montserrat", sans-serif;
+   min-height: 100vh;
+   background-color: var(--bg-color);
+   color: var(--txt-color);
+
+   display: grid;
+   place-items: center;
+}
+
+.input-group {
+   margin: 1em 0;
+}
+
+.input {
+   width: 40px;
+
+   border: none;
+   text-align: center;
+}
+
+.display {
+   height: 60px;
+   background-color: var(--txt-color);
+   color: #777;
+
+   text-align: center;
+   line-height: 30px;
+
+   padding: 1em;
+   margin: 1em 0;
+
+   position: relative;
+
+   user-select: all;
+}
+
+.display::before {
+   content: "copied";
+
+   background-color: var(--primary-color);
+   color: var(--txt-color);
+   font-size: 0.8rem;
+   letter-spacing: 1px;
+
+   padding: 5px 10px;
+
+   position: absolute;
+   right: 5px;
+
+   display: none;
+   opacity: 0;
+}
+
+.display.active {
+   font-size: 1.3rem;
+   line-height: 1.3rem;
+   color: #000;
+   letter-spacing: 5px;
+}
+
+.display.selected::before {
+   opacity: 1;
+   display: block;
+}
+
+.btn-generate {
+   all: unset;
+
+   background-color: var(--primary-color);
+   padding: 0.5em 1em;
+
+   float: right;
+
+   cursor: pointer;
+}
+
+.btn-generate:hover {
+   filter: brightness(0.8);
+}
+
+.btn-generate:active {
+   scale: 0.95;
+}
