@@ -8,6 +8,7 @@
     const charInput = document.getElementById("charinput");
 
 
+    const initialPwLength = 8;
     let str = '0123456789abcdefghijklnmopqrstuvwxyz;:[]{}()/,!@#$%^&*';
 
 
@@ -28,8 +29,8 @@
     }
 
     genBtn.addEventListener('click', () => {
-
-        const pwlength = charInput.value;
+        
+        const pwlength = charInput.value || initialPwLength;
 
         const rndPassword = generateRndPassword(pwlength);
 
